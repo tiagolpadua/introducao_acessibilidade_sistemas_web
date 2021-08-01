@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <p style="font-size: 40px; font-weight: bolder;">Selecione a Pizza que Deseja</p>
+
+    <form id="formPedido">
+        <div style="border: 1px solid black;">
+            <p>Dados do Cliente:</p>
+            <span>Nome:</span>
+            <input type="text" autocomplete="off" name="i1">
+            <span>Endereço:</span>
+            <input type="text" name="i2">
+        </div>
+        <div style="border: 1px solid black;">
+            <p>Selecione os itens da pizza:</p>
+            <input type="checkbox" name="i" value="x1">
+            <span>presunto</span><br>
+
+            <input type="checkbox" name="i" value="x2">
+            <span>Pepperoni</span><br>
+
+            <input type="checkbox" name="i" value="x3">
+            <span>cogumelos</span><br>
+
+            <input type="checkbox" name="i" value="x4">
+            <span>azeitonas</span>
+        </div>
+        <div style="border: 1px solid black;">
+            <p>Selecione o tipo de pagamento:</p>
+            <input type="radio" name="p" value="c">
+            <span>cartão</span><br>
+
+            <input type="radio" name="p" value="p">
+            <span>PIX</span><br>
+
+            <input type="radio" value="d">
+            <span>dinheiro</span>
+        </div>
+        <button type="button">Ok!</button>
+    </form>
+</body>
+
+</html>

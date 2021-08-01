@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCB</title>
+
+    <style>
+        #overlay {
+            position: fixed;
+            /* Sit on top of the page content */
+            display: block;
+            /* Hidden by default */
+            width: 100%;
+            /* Full width (cover the whole page) */
+            height: 100%;
+            /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 120, 175, 0.99);
+            /* Black background with opacity */
+            z-index: 2;
+            /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer;
+            /* Add a pointer on hover */
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <script>
+        $(document).ready(() => {
+            const gabarito = '[{"name":"nome","value":"heman"},{"name":"endereco","value":"eternia"},{"name":"itens","value":"presunto"},{"name":"itens","value":"cogumelos"},{"name":"pagamento","value":"pix"}]';
+            $("#formPedido").submit(function (event) {
+                event.preventDefault();
+                if (JSON.stringify($(this).serializeArray()) === gabarito) {
+                    window.alert('Acertou!\n' + JSON.stringify($(this).serializeArray(), null, '\t'));
+                } else {
+                    window.alert('Errou...\n' + JSON.stringify($(this).serializeArray(), null, '\t'));
+                };
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Selecione a Pizza que Deseja</h1>
+    </header>
+
+    <main>
+        <form id="formPedido">
+            <fieldset>
+                <legend>Dados do Cliente:</legend>
+                <label for="nome">Nome:</label>
+                <input type="text" autocomplete="off" id="nome" name="nome">
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" autocomplete="off">
+            </fieldset>
+            <fieldset>
+                <legend>Selecione os itens da pizza:</legend>
+                <input id="presunto" type="checkbox" name="itens" value="presunto">
+                <label for="presunto">presunto</label><br>
+                <input id="pepperoni" type="checkbox" name="itens" value="pepperoni">
+                <label for="pepperoni">Pepperoni</label><br>
+                <input id="cogumelos" type="checkbox" name="itens" value="cogumelos">
+                <label for="cogumelos">cogumelos</label><br>
+                <input id="azeitonas" type="checkbox" name="itens" value="azeitonas">
+                <label for="azeitonas">azeitonas</label>
+            </fieldset>
+            <fieldset>
+                <legend>Selecione o tipo de pagamento:</legend>
+                <input id="cartão" type="radio" name="pagamento" value="cartão">
+                <label for="cartão">cartão</label><br>
+                <input id="pix" type="radio" name="pagamento" value="pix">
+                <label for="pix">PIX</label><br>
+                <input id="dinheiro" type="radio" name="pagamento" value="dinheiro">
+                <label for="dinheiro">dinheiro</label>
+            </fieldset>
+            <button type="submit">Fazer Pedido!</button>
+        </form>
+    </main>
+    <div id="overlay"></div>
+</body>
+
+</html>
