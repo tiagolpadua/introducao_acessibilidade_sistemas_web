@@ -20,7 +20,7 @@ http://localhost:5000/site1/
 
     <style>
         .cor-texto {
-            color: grey;
+            color: black;
         }
 
         .br {
@@ -34,14 +34,14 @@ http://localhost:5000/site1/
     <div class="container-fluid">
 
         <div class="py-5 text-center">
-            <h2 class="cor-texto">Concluir Compra</h2>
+            <h1 class="cor-texto">Concluir Compra</h1>
         </div>
 
         <div class="row">
-            <div class="col-2 cor-texto">Pagar com:</div>
+            <label class="col-2 cor-texto" for="selecao-pagamento">Pagar com:</label>
             <div class="col-6"></div>
             <div class="col-4">
-                <select class="form-select cor-texto">
+                <select class="form-select cor-texto" id="selecao-pagamento">
                     <option selected>Selecione uma opção</option>
                     <option value="1">Cartão de crédito</option>
                     <option value="2">Boleto</option>
@@ -51,10 +51,10 @@ http://localhost:5000/site1/
         </div>
 
         <div class="row mt-3">
-            <div class="col-2 cor-texto">Enviar para:</div>
+            <label for="selecao-endereco" class="col-2 cor-texto" for="selecao-endereco">Enviar para:</label>
             <div class="col-6"></div>
             <div class="col-4">
-                <select class="form-select cor-texto">
+                <select class="form-select cor-texto" id="selecao-endereco">
                     <option selected>Selecione uma opção</option>
                     <option value="1">Rua 123</option>
                     <option value="2">Casa 14</option>
@@ -64,10 +64,18 @@ http://localhost:5000/site1/
         </div>
 
         <div class="row mt-3">
-            <div class="col-4 cor-texto">Embalar para presente:</div>
+            <label class="col-4 cor-texto" for="presente">Embalar para presente:</label>
             <div class="col-4"></div>
             <div class="col-2">
                 <input type="checkbox" id="presente">
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <label class="col-4 cor-texto" for="destinatario">Nome do destinatário:</label>
+            <div class="col-4"></div>
+            <div class="col-2">
+                <input type="text" id="destinatario">
             </div>
         </div>
 
@@ -84,9 +92,9 @@ http://localhost:5000/site1/
         </div>
 
         <div class="row mt-3">
-            <div class="col-2 cor-texto">Total:</div>
+            <label for="total" class="col-2 cor-texto">Total:</label>
             <div class="col-6"></div>
-            <div class="col-2 cor-texto">R$ 150,00</div>
+            <div class="col-2 cor-texto" id="total">R$ 150,00</div>
         </div>
 
     </div>
